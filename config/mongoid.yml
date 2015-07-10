@@ -87,6 +87,16 @@ development:
 
     # Ensure all times are UTC in the app side. (default: false)
     # use_utc: false
+production:
+ sessions:
+   default:
+     uri: <%= ENV['MONGOLAB_URI'] %>
+     options:
+       max_retries: 30
+       retry_interval: 1
+       timeout: 15
+       refresh_interval: 10
+
 test:
   sessions:
     default:
